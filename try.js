@@ -129,53 +129,37 @@ function runMatter() {
     World.add(world, circle);
   }
 
-  // Detect mobile devices
-  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
+  // add mouse control
+  var mouse = Mouse.create(render.canvas, {
+    mouseDown: false,
+    mouseUp: false,
+    mouseMove: true,
+    mouseWheel: false
+  });
 
-  if (!isMobile) {
-    // Desktop: Mouse control
-    var mouse = Mouse.create(render.canvas, {
-      mouseDown: false,
-      mouseUp: false,
-      mouseMove: true,
-      mouseWheel: false,
+  var mouseConstraint = Matter.MouseConstraint.create(engine, {
+    mouse: mouse,
+    constraint: {
+      stiffness: 0.2,
+      render: {
+        visible: false
+      }
+    }
+  });
+
+  World.add(world, mouseConstraint);
+
+  render.canvas.addEventListener('wheel', function(event) {
+    event.stopPropagation();
+  }, { passive: true });
+
+  Events.on(engine, "afterUpdate", function () {
+    if (!mouse.position.x) return;
+    Body.translate(attractiveBody, {
+      x: (mouse.position.x - attractiveBody.position.x) * 0.12,
+      y: (mouse.position.y - attractiveBody.position.y) * 0.12,
     });
-
-    var mouseConstraint = Matter.MouseConstraint.create(engine, {
-      mouse: mouse,
-      constraint: {
-        stiffness: 0.2,
-        render: {
-          visible: false,
-        },
-      },
-    });
-
-    World.add(world, mouseConstraint);
-
-    render.canvas.addEventListener(
-      "wheel",
-      function (event) {
-        event.stopPropagation();
-      },
-      { passive: true }
-    );
-
-    Events.on(engine, "afterUpdate", function () {
-      if (!mouse.position.x) return;
-      Body.translate(attractiveBody, {
-        x: (mouse.position.x - attractiveBody.position.x) * 0.12,
-        y: (mouse.position.y - attractiveBody.position.y) * 0.12,
-      });
-    });
-  } else {
-    // Mobile: Random rotation
-    Events.on(engine, "afterUpdate", function () {
-      Body.setAngularVelocity(attractiveBody, Common.random(-0.05, 0.05));
-    });
-  }
+  });
 
   let data = {
     engine: engine,
@@ -216,7 +200,7 @@ function debounce(func, wait, immediate) {
 function setWindowSize() {
   let dimensions = {};
   dimensions.width = window.innerWidth;
-  dimensions.height = window.innerHeight;
+  dimensions.height = windowInnerHeight;
   m.render.canvas.width = window.innerWidth;
   m.render.canvas.height = window.innerHeight;
   return dimensions;
@@ -224,4 +208,4 @@ function setWindowSize() {
 
 let m = runMatter();
 setWindowSize();
-window.addEventListener("resize", debounce(setWindowSize, 250));
+window.addEventListener('resize', debounce(setWindowSize, 250));
