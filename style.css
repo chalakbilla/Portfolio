@@ -1,6 +1,10 @@
 #wrapper-canvas canvas {
     max-width: 100%;
 }
+#wrapper-canvas {
+  pointer-events: auto;
+  overflow: auto;
+}
 
 /* For Webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {

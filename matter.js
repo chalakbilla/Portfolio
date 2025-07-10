@@ -9,7 +9,6 @@ Matter.use("matter-attractors");
 Matter.use("matter-wrap");
 
 function runMatter() {
-  // module aliases
   var Engine = Matter.Engine,
     Events = Matter.Events,
     Runner = Matter.Runner,
@@ -22,14 +21,11 @@ function runMatter() {
     Composites = Matter.Composites,
     Bodies = Matter.Bodies;
 
-  // create engine
   var engine = Engine.create();
-
   engine.world.gravity.y = 0;
   engine.world.gravity.x = 0;
   engine.world.gravity.scale = 0.1;
 
-  // create renderer
   var render = Render.create({
     element: canvas,
     engine: engine,
@@ -42,17 +38,10 @@ function runMatter() {
     },
   });
 
-  // create runner
   var runner = Runner.create();
-
-  // Runner.run(runner, engine);
-  // Render.run(render);
-
-  // create demo scene
   var world = engine.world;
   world.gravity.scale = 0;
 
-  // create a body with an attractor
   var attractiveBody = Bodies.circle(
     render.options.width / 2,
     render.options.height / 2,
@@ -63,7 +52,6 @@ function runMatter() {
         strokeStyle: `#000`,
         lineWidth: 0,
       },
-
       isStatic: true,
       plugin: {
         attractors: [
@@ -80,31 +68,23 @@ function runMatter() {
 
   World.add(world, attractiveBody);
 
-  // add some bodies that to be attracted
   for (var i = 0; i < 60; i += 1) {
     let x = Common.random(0, render.options.width);
     let y = Common.random(0, render.options.height);
     let s =
       Common.random() > 0.6 ? Common.random(10, 80) : Common.random(4, 60);
     let poligonNumber = Common.random(3, 6);
-    var body = Bodies.polygon(
-      x,
-      y,
-      poligonNumber,
-      s,
-
-      {
-        mass: s / 20,
-        friction: 0,
-        frictionAir: 0.02,
-        angle: Math.round(Math.random() * 360),
-        render: {
-          fillStyle: "#222222",
-          strokeStyle: `#000000`,
-          lineWidth: 2,
-        },
-      }
-    );
+    var body = Bodies.polygon(x, y, poligonNumber, s, {
+      mass: s / 20,
+      friction: 0,
+      frictionAir: 0.02,
+      angle: Math.round(Math.random() * 360),
+      render: {
+        fillStyle: "#222222",
+        strokeStyle: `#000000`,
+        lineWidth: 2,
+      },
+    });
 
     World.add(world, body);
 
@@ -150,18 +130,37 @@ function runMatter() {
   }
 
   // add mouse control
-  var mouse = Mouse.create(render.canvas);
+  var mouse = Mouse.create(render.canvas, {
+    mouseDown: false,
+    mouseUp: false,
+    mouseMove: true,
+    mouseWheel: false
+  });
+
+  var mouseConstraint = Matter.MouseConstraint.create(engine, {
+    mouse: mouse,
+    constraint: {
+      stiffness: 0.2,
+      render: {
+        visible: false
+      }
+    }
+  });
+
+  World.add(world, mouseConstraint);
+
+  render.canvas.addEventListener('wheel', function(event) {
+    event.stopPropagation();
+  }, { passive: true });
 
   Events.on(engine, "afterUpdate", function () {
     if (!mouse.position.x) return;
-    // smoothly move the attractor body towards the mouse
     Body.translate(attractiveBody, {
       x: (mouse.position.x - attractiveBody.position.x) * 0.12,
       y: (mouse.position.y - attractiveBody.position.y) * 0.12,
     });
   });
 
-  // return a context for MatterDemo to control
   let data = {
     engine: engine,
     runner: runner,
@@ -200,14 +199,13 @@ function debounce(func, wait, immediate) {
 
 function setWindowSize() {
   let dimensions = {};
-  dimensions.width = $(window).width();
-  dimensions.height = $(window).height();
-
-  m.render.canvas.width = $(window).width();
-  m.render.canvas.height = $(window).height();
+  dimensions.width = window.innerWidth;
+  dimensions.height = windowInnerHeight;
+  m.render.canvas.width = window.innerWidth;
+  m.render.canvas.height = window.innerHeight;
   return dimensions;
 }
 
 let m = runMatter();
 setWindowSize();
-$(window).resize(debounce(setWindowSize, 250));
+window.addEventListener('resize', debounce(setWindowSize, 250));
