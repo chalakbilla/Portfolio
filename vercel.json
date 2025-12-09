@@ -1,0 +1,6 @@
+{
+    "routes": [
+      { "src": "/resume", "dest": "/ankit_resume.pdf" }
+    ]
+  }
+  
