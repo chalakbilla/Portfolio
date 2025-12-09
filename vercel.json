@@ -1,5 +1,5 @@
 {
     "routes": [
-      { "src": "/resume", "dest": "/assets/images/ankit_resume.pdf" }
+      { "src": "/resume", "dest": "/ankit_resume.pdf" }
     ]
   }
