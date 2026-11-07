@@ -293,11 +293,12 @@
         </h3>
         <span class="text-[#ffe578] text-base md:text-lg">(Prescription Analysis)</span>
         <p class="text-justify text-sm md:text-base mt-2">
-          GeoPharma is a fast, intelligent, and user-friendly web application designed to transform how prescriptions
-          are interpreted and acted upon. Built using React.js, Node.js, and Tailwind CSS, this platform harnesses the
-          power of AI to analyze medical prescriptions and provide accurate, cost-effective medicine suggestions.
-          Engineered advanced AI algorithms to enhance prescription analysis accuracy, achieving a 35% increase in
-          cost-effective recommendations and improving user satisfaction rates significantly.
+                    GeoPharma is an AI-powered prescription reader that turns an uploaded prescription (image or PDF) into clear,
+          actionable information. It extracts patient and doctor details, checks prescription validity, and lists each
+          medicine with its dose schedule, same-salt alternatives and interaction warnings. Users also get a daily routine
+          with one-click calendar reminders, a streaming AI pharmacist chat in English and Hindi with voice input, a medicine
+          explorer, and a My Rx history for logged-in users. Built with React, Vite and Tailwind on the frontend, an Express
+          API on Node.js, Gemini via Vertex AI and a Neon database, deployed as a single Vercel project.
         </p>
         <ul class="flex flex-wrap gap-2 mt-2">
           <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
@@ -480,6 +481,189 @@
           </li>
         </ul>
       </div>
+    </div>
+    <!-- Aria Voice Agent -->
+    <div class="flex flex-col sm:flex-row gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 relative">
+      <div class="order-2 sm:order-1 w-full">
+        <h3 class="text-[#ffe578] font-bold text-2xl md:text-4xl">
+          Aria Voice Agent
+        </h3>
+        <span class="text-[#ffe578] text-base md:text-lg">(AI Voice Support)</span>
+        <p class="text-justify text-sm md:text-base mt-2">
+          Aria is a browser-based voice support agent for Aura Skincare. Click Start Call, speak naturally, and Aria handles order tracking, returns and cancellations, then gives you a transcript and a JSON summary when the call ends. Built with React, Vite and Flask, using the browser Web Speech API for speech-to-text and text-to-speech. A rule-based dialogue manager enforces return and cancellation policy in code, with no LLM or API keys, so replies are instant and deterministic.
+        </p>
+        <ul class="flex flex-wrap gap-2 mt-2">
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #React
+          </li>
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #Vite
+          </li>
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #Flask
+          </li>
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #WebSpeechAPI
+          </li>
+        </ul>
+      </div>
+      <div class="h-[1px] left-1/2 right-1/4 bg-[#1788ae] absolute top-1/2 hidden sm:block"></div>
+      <div
+        class="w-4 h-4 rounded-full border-[3px] border-[#ffe578] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block">
+      </div>
+      <a href="https://aria-aura.vercel.app/"
+        class="order-1 sm:order-2 flex w-full relative justify-center sm:justify-start">
+        <div class="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200 sm:ml-auto">
+          <img class="max-w-[400px] w-full relative z-10 drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
+            src="./assets/images/Aura.png" alt="Aria Voice Agent" />
+          <span
+            class="flex group-hover:-top-14 ease-jump duration-200 text-black bg-[#ffe578] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">Aria Voice Agent
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-external-link">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </span>
+        </div>
+      </a>
+    </div>
+    <!-- TaskFlow -->
+    <div class="flex flex-col sm:flex-row gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 relative">
+      <div class="h-[1px] left-1/4 right-1/2 bg-[#1788ae] absolute top-1/2 hidden sm:block"></div>
+      <div
+        class="w-4 h-4 rounded-full border-[3px] border-[#fc815c] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block">
+      </div>
+      <a href="https://hairdrama-taskmanager.vercel.app" class="flex w-full relative justify-center sm:justify-start">
+        <div class="flex flex-col items-center relative group hover:scale-105 ease-in-out sm:mr-auto duration-200">
+          <img class="max-w-[400px] w-full mr-auto relative z-10 drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
+            src="./assets/images/TaskFlow.png" alt="TaskFlow" />
+          <span
+            class="flex group-hover:-top-14 ease-jump duration-200 bg-[#fc815c] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">TaskFlow
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-external-link">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </span>
+        </div>
+      </a>
+      <div class="w-full">
+        <h3 class="text-[#fc815c] font-bold text-2xl md:text-4xl">
+          TaskFlow
+        </h3>
+        <span class="text-[#fc815c] text-base md:text-lg">(Task Manager, Hairdrama Tech Assignment)</span>
+        <p class="text-justify text-sm md:text-base mt-2">
+          TaskFlow lets teams create tasks, assign them to teammates and track progress on a real-time dashboard with stat cards, a status chart and a 7-day trend. Users sign in securely with Google OAuth 2.0, and EmailJS sends automated notifications when tasks are created, started and completed. Built with Next.js 14, TypeScript, a Flask backend and Supabase (PostgreSQL), deployed as a single unified Vercel project.
+        </p>
+        <ul class="flex flex-wrap gap-2 mt-2">
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #Next.js
+          </li>
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #TypeScript
+          </li>
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #Flask
+          </li>
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #Supabase
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- PhotoGallery -->
+    <div class="flex flex-col sm:flex-row gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 relative">
+      <div class="order-2 sm:order-1 w-full">
+        <h3 class="text-[#ffe578] font-bold text-2xl md:text-4xl">
+          PhotoGallery
+        </h3>
+        <span class="text-[#ffe578] text-base md:text-lg">(Photo Gallery App)</span>
+        <p class="text-justify text-sm md:text-base mt-2">
+          A React photo gallery that fetches 30 photos from the Picsum Photos API with loading and error states. It offers a 3D carousel that spins with mouse movement, a responsive grid view and real-time search by author name. Favourites are managed with useReducer and saved to localStorage, with a custom useFetchPhotos hook and useCallback/useMemo for performance.
+        </p>
+        <ul class="flex flex-wrap gap-2 mt-2">
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #React
+          </li>
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #Vite
+          </li>
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #TailwindCSS
+          </li>
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #Hooks
+          </li>
+        </ul>
+      </div>
+      <div class="h-[1px] left-1/2 right-1/4 bg-[#1788ae] absolute top-1/2 hidden sm:block"></div>
+      <div
+        class="w-4 h-4 rounded-full border-[3px] border-[#ffe578] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block">
+      </div>
+      <a href="https://photo-gallery-pearl-psi.vercel.app/"
+        class="order-1 sm:order-2 flex w-full relative justify-center sm:justify-start">
+        <div class="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200 sm:ml-auto">
+          <img class="max-w-[400px] w-full relative z-10 drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
+            src="./assets/images/PhotoGallery.png" alt="PhotoGallery" />
+          <span
+            class="flex group-hover:-top-14 ease-jump duration-200 text-black bg-[#ffe578] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">PhotoGallery
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-external-link">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </span>
+        </div>
+      </a>
+    </div>
+    <!-- Raivatedu -->
+    <div class="flex flex-col sm:flex-row gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 relative">
+      <div class="h-[1px] left-1/4 right-1/2 bg-[#1788ae] absolute top-1/2 hidden sm:block"></div>
+      <div
+        class="w-4 h-4 rounded-full border-[3px] border-[#fc815c] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block">
+      </div>
+      <a href="https://raivatedu.vercel.app/" class="flex w-full relative justify-center sm:justify-start">
+        <div class="flex flex-col items-center relative group hover:scale-105 ease-in-out sm:mr-auto duration-200">
+          <img class="max-w-[400px] w-full mr-auto relative z-10 drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
+            src="./assets/images/Raivatedu.png" alt="Raivatedu" />
+          <span
+            class="flex group-hover:-top-14 ease-jump duration-200 bg-[#fc815c] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">Raivatedu
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-external-link">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </span>
+        </div>
+      </a>
+      <div class="w-full">
+        <h3 class="text-[#fc815c] font-bold text-2xl md:text-4xl">
+          Raivatedu
+        </h3>
+        <span class="text-[#fc815c] text-base md:text-lg">(EdTech Platform)</span>
+        <p class="text-justify text-sm md:text-base mt-2">
+          Raivatedu is an online learning platform where students explore industry-relevant courses and learn from expert mentors. It includes course search, category browsing, featured courses with pricing and ratings, mentor profiles, student success stories and an FAQ, across Home, Courses, Mentors, About and Contact pages.
+        </p>
+        <ul class="flex flex-wrap gap-2 mt-2">
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #Next.js
+          </li>
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #React
+          </li>
+          <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
+            #EdTech
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="w-[2px] hidden sm:block bg-[#1788ae] absolute top-0 bottom-0 left-1/2 -translate-x-1/2"></div>
   </section>
